@@ -1,8 +1,10 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "./views/Home.vue";
-import BlogDetail from "./views/BlogDetail.vue";
-import BlogDetailFull from "./views/BlogDetailFull.vue";
+import Vue from "vue"
+import Router from "vue-router"
+import Home from "./views/Home.vue"
+import BlogDetail from "./views/BlogDetail.vue"
+import BlogDetailFull from "./views/BlogDetailFull.vue"
+import HomeHeader from './components/HomeHeader.vue'
+import BlogHeader from './components/BlogHeader.vue'
 
 Vue.use(Router);
 
@@ -13,17 +15,26 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      components: {
+        header: HomeHeader,
+        body: Home
+      }
     },
     {
       path: "/blog/:id",
       name: "blog-detail",
-      component: BlogDetail
+      components: {
+        header: BlogHeader,
+        body: BlogDetail
+      }
     },
     {
       path: "/blog/:id/full",
       name: "blog-detail-full",
-      component: BlogDetailFull
+      components: {
+        header: BlogHeader,
+        body: BlogDetailFull
+      }
     }
   ]
 });
