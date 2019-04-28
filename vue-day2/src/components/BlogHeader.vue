@@ -1,5 +1,5 @@
 <template>
-    <h1>This my blog</h1>
+    <h1>Blog Header <Header></Header></h1>
 </template>
 
 <script>
