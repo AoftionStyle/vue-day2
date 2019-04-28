@@ -10,14 +10,14 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  base: process.env.BASE_URL,
+  base: process.env.BASE_URL, //relation guard
   routes: [
     {
       path: "/",
       name: "home",
       components: {
-        header: HomeHeader,
-        body: Home
+        header: () => import(/* webpackChunkName: "Home" */ "./components/HomeHeader.vue"),
+        body: () => import(/* webpackChunkName: "Home" */ "./views/Home.vue")
       }
     },
     {
