@@ -2,7 +2,9 @@
   <div class="blog-detail" v-if="blog.title">
     <h1>{{ blog.title.rendered }}</h1>
     <p v-html="blog.excerpt.rendered" class="wrap"></p>
-    Read more...
+    <router-link :to="{ name: 'blog-detail-full', params: { id: blog.id } }"
+      >Read more...</router-link
+    >
   </div>
 </template>
 
